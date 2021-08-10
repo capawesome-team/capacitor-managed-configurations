@@ -1,3 +1,12 @@
 export interface ManagedConfigurationsPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  get(options: GetOptions): Promise<GetResult>;
+}
+
+export interface GetOptions {
+  key: string;
+  type: 'string' | 'number' | 'boolean';
+}
+
+export interface GetResult {
+  value: string | number | boolean | null;
 }

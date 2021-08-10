@@ -1,10 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { ManagedConfigurationsPlugin } from './definitions';
+import type { GetOptions, GetResult, ManagedConfigurationsPlugin } from './definitions';
 
 export class ManagedConfigurationsWeb extends WebPlugin implements ManagedConfigurationsPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async get(_options: GetOptions): Promise<GetResult> {
+    throw new Error('Not implemented on web.');
   }
 }
