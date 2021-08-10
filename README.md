@@ -64,14 +64,14 @@ const get = async () => {
 ### get(...)
 
 ```typescript
-get(options: GetOptions) => any
+get(options: GetOptions) => Promise<GetResult>
 ```
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
 | **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
 
 --------------------
 
@@ -79,19 +79,19 @@ get(options: GetOptions) => any
 ### Interfaces
 
 
-#### GetOptions
-
-| Prop       | Type                                           |
-| ---------- | ---------------------------------------------- |
-| **`key`**  | <code>string</code>                            |
-| **`type`** | <code>"string" \| "number" \| "boolean"</code> |
-
-
 #### GetResult
 
 | Prop        | Type                                             |
 | ----------- | ------------------------------------------------ |
 | **`value`** | <code>string \| number \| boolean \| null</code> |
+
+
+#### GetOptions
+
+| Prop       | Type                                           |
+| ---------- | ---------------------------------------------- |
+| **`key`**  | <code>string</code>                            |
+| **`type`** | <code>'string' \| 'number' \| 'boolean'</code> |
 
 </docgen-api>
 
