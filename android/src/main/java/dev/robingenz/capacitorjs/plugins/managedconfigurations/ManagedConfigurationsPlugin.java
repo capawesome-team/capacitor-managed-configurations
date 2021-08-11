@@ -8,12 +8,12 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
+import org.json.JSONObject;
+
 @CapacitorPlugin(name = "ManagedConfigurations")
 public class ManagedConfigurationsPlugin extends Plugin {
 
     public static final String ERROR_KEY_MISSING = "key must be provided.";
-    public static final String ERROR_TYPE_MISSING = "type must be provided.";
-    public static final String ERROR_TYPE_INVALID = "type is invalid.";
 
     private ManagedConfigurations implementation;
 
@@ -29,33 +29,47 @@ public class ManagedConfigurationsPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void get(PluginCall call) {
+    public void getString(PluginCall call) {
         String key = call.getString("key");
         if (key == null) {
             call.reject(ERROR_KEY_MISSING);
             return;
         }
-        String type = call.getString("type");
-        if (type == null) {
-            call.reject(ERROR_TYPE_MISSING);
+
+        String value = implementation.getString(key);
+
+        JSObject ret = new JSObject();
+        ret.put("value", value == null ? JSONObject.NULL : value);
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void getInteger(PluginCall call) {
+        String key = call.getString("key");
+        if (key == null) {
+            call.reject(ERROR_KEY_MISSING);
             return;
         }
 
+        Integer value = implementation.getInteger(key);
+
         JSObject ret = new JSObject();
-        switch (type) {
-            case "string":
-                ret.put("value", implementation.getString(key));
-                break;
-            case "number":
-                ret.put("value", implementation.getInteger(key));
-                break;
-            case "boolean":
-                ret.put("value", implementation.getBoolean(key));
-                break;
-            default:
-                call.reject(ERROR_TYPE_INVALID);
-                return;
+        ret.put("value", value == null ? JSONObject.NULL : value);
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void getBoolean(PluginCall call) {
+        String key = call.getString("key");
+        if (key == null) {
+            call.reject(ERROR_KEY_MISSING);
+            return;
         }
+
+        Boolean value = implementation.getBoolean(key);
+
+        JSObject ret = new JSObject();
+        ret.put("value", value == null ? JSONObject.NULL : value);
         call.resolve(ret);
     }
 }

@@ -1,12 +1,13 @@
 export interface ManagedConfigurationsPlugin {
-  get(options: GetOptions): Promise<GetResult>;
+  getString(options: GetOptions): Promise<GetResult<string>>;
+  getNumber(options: GetOptions): Promise<GetResult<number>>;
+  getBoolean(options: GetOptions): Promise<GetResult<boolean>>;
 }
 
 export interface GetOptions {
   key: string;
-  type: 'string' | 'number' | 'boolean';
 }
 
-export interface GetResult {
-  value: string | number | boolean | null;
+export interface GetResult<T> {
+  value: T | null;
 }

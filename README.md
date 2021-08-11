@@ -41,8 +41,18 @@ No configuration required for this plugin.
 ```typescript
 import { ManagedConfigurations } from '@robingenz/capacitor-managed-configurations';
 
-const get = async () => {
-  const result = await ManagedConfigurations.get({ key: 'server_url', type: 'string' });
+const getString = async () => {
+  const result = await ManagedConfigurations.getString({ key: 'server_url' });
+  return result.value;
+};
+
+const getNumber = async () => {
+  const result = await ManagedConfigurations.getNumber({ key: 'server_port' });
+  return result.value;
+};
+
+const getBoolean = async () => {
+  const result = await ManagedConfigurations.getBoolean({ key: 'download_on_cellular' });
   return result.value;
 };
 ```
@@ -51,7 +61,9 @@ const get = async () => {
 
 <docgen-index>
 
-* [`get(...)`](#get)
+* [`getString(...)`](#getstring)
+* [`getNumber(...)`](#getnumber)
+* [`getBoolean(...)`](#getboolean)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -59,17 +71,47 @@ const get = async () => {
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### get(...)
+### getString(...)
 
 ```typescript
-get(options: GetOptions) => Promise<GetResult>
+getString(options: GetOptions) => Promise<GetResult<string>>
 ```
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
 | **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&lt;string&gt;&gt;</code>
+
+--------------------
+
+
+### getNumber(...)
+
+```typescript
+getNumber(options: GetOptions) => Promise<GetResult<number>>
+```
+
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
+
+**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&lt;number&gt;&gt;</code>
+
+--------------------
+
+
+### getBoolean(...)
+
+```typescript
+getBoolean(options: GetOptions) => Promise<GetResult<boolean>>
+```
+
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
+
+**Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&lt;boolean&gt;&gt;</code>
 
 --------------------
 
@@ -79,17 +121,16 @@ get(options: GetOptions) => Promise<GetResult>
 
 #### GetResult
 
-| Prop        | Type                                             |
-| ----------- | ------------------------------------------------ |
-| **`value`** | <code>string \| number \| boolean \| null</code> |
+| Prop        | Type                   |
+| ----------- | ---------------------- |
+| **`value`** | <code>T \| null</code> |
 
 
 #### GetOptions
 
-| Prop       | Type                                           |
-| ---------- | ---------------------------------------------- |
-| **`key`**  | <code>string</code>                            |
-| **`type`** | <code>'string' \| 'number' \| 'boolean'</code> |
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`key`** | <code>string</code> |
 
 </docgen-api>
 
