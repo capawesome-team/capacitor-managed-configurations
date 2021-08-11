@@ -9,10 +9,15 @@ import Capacitor
 public class ManagedConfigurationsPlugin: CAPPlugin {
     private let implementation = ManagedConfigurations()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func getString(_ call: CAPPluginCall) {
+        call.reject("Not implemented on iOS.")
+    }
+
+    @objc func getInteger(_ call: CAPPluginCall) {
+        call.reject("Not implemented on iOS.")
+    }
+
+    @objc func getBoolean(_ call: CAPPluginCall) {
+        call.reject("Not implemented on iOS.")
     }
 }
