@@ -1,13 +1,11 @@
 package dev.robingenz.capacitorjs.plugins.managedconfigurations;
 
 import android.content.res.Configuration;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
 import org.json.JSONObject;
 
 @CapacitorPlugin(name = "ManagedConfigurations")

@@ -2,7 +2,6 @@ package dev.robingenz.capacitorjs.plugins.managedconfigurations;
 
 import android.content.RestrictionsManager;
 import android.os.Bundle;
-
 import com.getcapacitor.Bridge;
 
 public class ManagedConfigurations {
