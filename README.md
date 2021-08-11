@@ -17,8 +17,6 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
-> 🚧 This project is currently under active development and has not yet been sufficiently tested. It might be changed in backward-incompatible ways.
-
 ## Maintainers
 
 | Maintainer | GitHub                                    | Social                                        |
@@ -32,7 +30,7 @@ npm install @robingenz/capacitor-managed-configurations
 npx cap sync
 ```
 
-On **Android**, see [`Define managed configurations`](https://developer.android.com/work/managed-configurations#define-configuration) and follow the instructions to declare the app's managed configurations correctly.
+On **Android**, see [Define managed configurations](https://developer.android.com/work/managed-configurations#define-configuration) and follow the instructions to declare the app's managed configurations correctly.
 
 ## Configuration
 
@@ -94,6 +92,10 @@ get(options: GetOptions) => Promise<GetResult>
 | **`type`** | <code>'string' \| 'number' \| 'boolean'</code> |
 
 </docgen-api>
+
+## Test your implementation
+
+On **Android**, see [Set up device owner for testing](https://source.android.com/devices/tech/admin/testing-setup#set_up_the_device_owner_for_testing) and follow the instructions to set up a device owner testing environment.
 
 ## Changelog
 
