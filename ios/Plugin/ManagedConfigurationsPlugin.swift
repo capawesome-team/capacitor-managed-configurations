@@ -7,17 +7,61 @@ import Capacitor
  */
 @objc(ManagedConfigurationsPlugin)
 public class ManagedConfigurationsPlugin: CAPPlugin {
-    private let implementation = ManagedConfigurations()
-
-    @objc func getString(_ call: CAPPluginCall) {
-        call.reject("Not implemented on iOS.")
+    public let errorKeyMissing = "traceName must be provided."
+    private var implementation: ManagedConfigurations?
+    
+    override public func load() {
+        implementation = ManagedConfigurations()
     }
 
-    @objc func getInteger(_ call: CAPPluginCall) {
-        call.reject("Not implemented on iOS.")
+    @objc func getString(_ call: CAPPluginCall) {
+        guard let key = call.getString("key") else {
+            call.reject(errorKeyMissing)
+            return
+        }
+        
+        var result = JSObject()
+        let keyExists = implementation?.keyExists(key)
+        if keyExists == true {
+            let value = implementation?.getString(key)
+            result["value"] = value
+        } else {
+            result["value"] = nil
+        }
+        call.resolve(result)
+    }
+
+    @objc func getNumber(_ call: CAPPluginCall) {
+        guard let key = call.getString("key") else {
+            call.reject(errorKeyMissing)
+            return
+        }
+        
+        var result = JSObject()
+        let keyExists = implementation?.keyExists(key)
+        if keyExists == true {
+            let value = implementation?.getInt(key)
+            result["value"] = value
+        } else {
+            result["value"] = nil
+        }
+        call.resolve(result)
     }
 
     @objc func getBoolean(_ call: CAPPluginCall) {
-        call.reject("Not implemented on iOS.")
+        guard let key = call.getString("key") else {
+            call.reject(errorKeyMissing)
+            return
+        }
+        
+        var result = JSObject()
+        let keyExists = implementation?.keyExists(key)
+        if keyExists == true {
+            let value = implementation?.getBool(key)
+            result["value"] = value
+        } else {
+            result["value"] = nil
+        }
+        call.resolve(result)
     }
 }
