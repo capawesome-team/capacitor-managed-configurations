@@ -79,6 +79,10 @@ const getBoolean = async () => {
 getString(options: GetOptions) => Promise<GetResult<string>>
 ```
 
+Fetches the value associated with the given key, or `null` if no mapping exists for the given key.
+
+Only available for Android and iOS.
+
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
 | **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
@@ -93,6 +97,10 @@ getString(options: GetOptions) => Promise<GetResult<string>>
 ```typescript
 getNumber(options: GetOptions) => Promise<GetResult<number>>
 ```
+
+Fetches the value associated with the given key, or `null` if no mapping exists for the given key.
+
+Only available for Android and iOS.
 
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
@@ -109,6 +117,10 @@ getNumber(options: GetOptions) => Promise<GetResult<number>>
 getBoolean(options: GetOptions) => Promise<GetResult<boolean>>
 ```
 
+Fetches the value associated with the given key, or `null` if no mapping exists for the given key.
+
+Only available for Android and iOS.
+
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
 | **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
@@ -123,16 +135,16 @@ getBoolean(options: GetOptions) => Promise<GetResult<boolean>>
 
 #### GetResult
 
-| Prop        | Type                   |
-| ----------- | ---------------------- |
-| **`value`** | <code>T \| null</code> |
+| Prop        | Type                   | Description                                                                             |
+| ----------- | ---------------------- | --------------------------------------------------------------------------------------- |
+| **`value`** | <code>T \| null</code> | The value of the configuration entry, or `null` if no mapping exists for the given key. |
 
 
 #### GetOptions
 
-| Prop      | Type                |
-| --------- | ------------------- |
-| **`key`** | <code>string</code> |
+| Prop      | Type                | Description                             |
+| --------- | ------------------- | --------------------------------------- |
+| **`key`** | <code>string</code> | Unique key for the configuration entry. |
 
 </docgen-api>
 
