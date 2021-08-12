@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/robingenz/capacitor-managed-configurations/compare/v0.1.1...v0.1.2) (2021-08-12)
+
+
+### Features
+
+* add iOS support ([#6](https://github.com/robingenz/capacitor-managed-configurations/issues/6)) ([afa71c4](https://github.com/robingenz/capacitor-managed-configurations/commit/afa71c4704f49a0ba2e61e460be4c26a42ad3a37))
+
 ### [0.1.1](https://github.com/robingenz/capacitor-managed-configurations/compare/v0.1.0...v0.1.1) (2021-08-12)
 
 
