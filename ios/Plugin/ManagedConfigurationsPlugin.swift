@@ -9,7 +9,7 @@ import Capacitor
 public class ManagedConfigurationsPlugin: CAPPlugin {
     public let errorKeyMissing = "traceName must be provided."
     private var implementation: ManagedConfigurations?
-    
+
     override public func load() {
         implementation = ManagedConfigurations()
     }
@@ -19,7 +19,7 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
             call.reject(errorKeyMissing)
             return
         }
-        
+
         var result = JSObject()
         let keyExists = implementation?.keyExists(key)
         if keyExists == true {
@@ -36,7 +36,7 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
             call.reject(errorKeyMissing)
             return
         }
-        
+
         var result = JSObject()
         let keyExists = implementation?.keyExists(key)
         if keyExists == true {
@@ -53,7 +53,7 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
             call.reject(errorKeyMissing)
             return
         }
-        
+
         var result = JSObject()
         let keyExists = implementation?.keyExists(key)
         if keyExists == true {
