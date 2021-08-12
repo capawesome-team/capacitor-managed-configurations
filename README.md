@@ -17,6 +17,8 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
+> ⚠️ The iOS implementation could not be tested yet. I appreciate any feedback.
+
 ## Maintainers
 
 | Maintainer | GitHub                                    | Social                                        |
