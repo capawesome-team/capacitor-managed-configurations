@@ -42,7 +42,7 @@ public class ManagedConfigurationsPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void getInteger(PluginCall call) {
+    public void getNumber(PluginCall call) {
         String key = call.getString("key");
         if (key == null) {
             call.reject(ERROR_KEY_MISSING);
