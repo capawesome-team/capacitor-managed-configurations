@@ -138,7 +138,7 @@ getBoolean(options: GetOptions) => Promise<GetResult<boolean>>
 
 On **Android**, see [Set up device owner for testing](https://source.android.com/devices/tech/admin/testing-setup#set_up_the_device_owner_for_testing) and follow the instructions to set up a device owner testing environment.
 
-On **iOS**, you need to install the app as a _managed app_ using an MDM solution.
+On **iOS**, you need to install the app as a [managed app](https://support.apple.com/de-de/guide/deployment-reference-ios/iorf4d72eded/web) with a MDM solution.
 
 ## Changelog
 

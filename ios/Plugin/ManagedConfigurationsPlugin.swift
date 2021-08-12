@@ -21,10 +21,8 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
         }
 
         var result = JSObject()
-        let keyExists = implementation?.keyExists(key)
-        if keyExists == true {
-            let value = implementation?.getString(key)
-            result["value"] = value
+        if implementation?.keyExists(key) == true {
+            result["value"] = implementation?.getString(key)
         } else {
             result["value"] = nil
         }
@@ -38,10 +36,8 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
         }
 
         var result = JSObject()
-        let keyExists = implementation?.keyExists(key)
-        if keyExists == true {
-            let value = implementation?.getInt(key)
-            result["value"] = value
+        if implementation?.keyExists(key) == true {
+            result["value"] = implementation?.getInt(key)
         } else {
             result["value"] = nil
         }
@@ -55,10 +51,8 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
         }
 
         var result = JSObject()
-        let keyExists = implementation?.keyExists(key)
-        if keyExists == true {
-            let value = implementation?.getBool(key)
-            result["value"] = value
+        if implementation?.keyExists(key) == true {
+            result["value"] = implementation?.getBool(key)
         } else {
             result["value"] = nil
         }
