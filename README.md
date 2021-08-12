@@ -17,8 +17,6 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
-> ⚠️ The iOS implementation could not be tested yet. I appreciate any feedback.
-
 ## Maintainers
 
 | Maintainer | GitHub                                    | Social                                        |
@@ -33,6 +31,8 @@ npx cap sync
 ```
 
 On **Android**, see [Define managed configurations](https://developer.android.com/work/managed-configurations#define-configuration) and follow the instructions to declare the app's managed configurations correctly.
+
+> ⚠️ The iOS implementation could not be tested yet. I appreciate any feedback.
 
 ## Configuration
 
