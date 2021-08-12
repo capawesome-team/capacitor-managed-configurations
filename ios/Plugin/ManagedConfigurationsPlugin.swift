@@ -7,17 +7,55 @@ import Capacitor
  */
 @objc(ManagedConfigurationsPlugin)
 public class ManagedConfigurationsPlugin: CAPPlugin {
-    private let implementation = ManagedConfigurations()
+    public let errorKeyMissing = "traceName must be provided."
+    private var implementation: ManagedConfigurations?
 
-    @objc func getString(_ call: CAPPluginCall) {
-        call.reject("Not implemented on iOS.")
+    override public func load() {
+        implementation = ManagedConfigurations()
     }
 
-    @objc func getInteger(_ call: CAPPluginCall) {
-        call.reject("Not implemented on iOS.")
+    @objc func getString(_ call: CAPPluginCall) {
+        guard let key = call.getString("key") else {
+            call.reject(errorKeyMissing)
+            return
+        }
+
+        var result = JSObject()
+        if implementation?.keyExists(key) == true {
+            result["value"] = implementation?.getString(key)
+        } else {
+            result["value"] = nil
+        }
+        call.resolve(result)
+    }
+
+    @objc func getNumber(_ call: CAPPluginCall) {
+        guard let key = call.getString("key") else {
+            call.reject(errorKeyMissing)
+            return
+        }
+
+        var result = JSObject()
+        if implementation?.keyExists(key) == true {
+            result["value"] = implementation?.getInt(key)
+        } else {
+            result["value"] = nil
+        }
+        call.resolve(result)
     }
 
     @objc func getBoolean(_ call: CAPPluginCall) {
-        call.reject("Not implemented on iOS.")
+        guard let key = call.getString("key") else {
+            call.reject(errorKeyMissing)
+            return
+        }
+
+        var result = JSObject()
+        if implementation?.keyExists(key) == true {
+            result["value"] = implementation?.getBool(key)
+        } else {
+            result["value"] = nil
+        }
+        call.resolve(result)
     }
 }
