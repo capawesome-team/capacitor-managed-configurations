@@ -38,6 +38,10 @@ On **Android**, see [Define managed configurations](https://developer.android.co
 
 No configuration required for this plugin.
 
+## Demo
+
+A working example can be found here: [robingenz/capacitor-plugin-demo](https://github.com/robingenz/capacitor-plugin-demo)
+
 ## Usage
 
 ```typescript
