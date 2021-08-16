@@ -24,7 +24,7 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
         if implementation?.keyExists(key) == true {
             result["value"] = implementation?.getString(key)
         } else {
-            result["value"] = nil
+            result["value"] = NSNull()
         }
         call.resolve(result)
     }
@@ -39,7 +39,7 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
         if implementation?.keyExists(key) == true {
             result["value"] = implementation?.getInt(key)
         } else {
-            result["value"] = nil
+            result["value"] = NSNull()
         }
         call.resolve(result)
     }
@@ -54,7 +54,7 @@ public class ManagedConfigurationsPlugin: CAPPlugin {
         if implementation?.keyExists(key) == true {
             result["value"] = implementation?.getBool(key)
         } else {
-            result["value"] = nil
+            result["value"] = NSNull()
         }
         call.resolve(result)
     }
