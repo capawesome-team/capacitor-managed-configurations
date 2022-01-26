@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/robingenz/capacitor-managed-configurations/compare/v0.1.3...v0.1.4) (2022-01-26)
+
+
+### Bug Fixes
+
+* inline source code in esm map files ([0804609](https://github.com/robingenz/capacitor-managed-configurations/commit/08046095a5db2d77368aba261a9e88829ae35c74))
+
 ### [0.1.3](https://github.com/robingenz/capacitor-managed-configurations/compare/v0.1.2...v0.1.3) (2021-08-16)
 
 
