@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/capawesome-team/capacitor-managed-configurations/compare/v0.1.4...v0.2.0) (2022-08-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* This plugin was renamed to `@capawesome/capacitor-managed-configurations`. Please install the new npm package and run `npx cap sync`.
+* This plugin now only supports Capacitor 4.
+
+### Features
+
+* update to Capacitor 4 ([#13](https://github.com/capawesome-team/capacitor-managed-configurations/issues/13)) ([c671919](https://github.com/capawesome-team/capacitor-managed-configurations/commit/c671919c281d286051114cc25ea334245ea51018))
+
+
+* rename to `@capawesome/capacitor-managed-configurations` ([#14](https://github.com/capawesome-team/capacitor-managed-configurations/issues/14)) ([7b0404b](https://github.com/capawesome-team/capacitor-managed-configurations/commit/7b0404bc8a48de155bc5376acaf1ed7a5543dd38))
+
 ### [0.1.4](https://github.com/robingenz/capacitor-managed-configurations/compare/v0.1.3...v0.1.4) (2022-01-26)
 
 
