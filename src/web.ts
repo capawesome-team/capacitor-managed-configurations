@@ -8,7 +8,8 @@ import type {
 
 export class ManagedConfigurationsWeb
   extends WebPlugin
-  implements ManagedConfigurationsPlugin {
+  implements ManagedConfigurationsPlugin
+{
   async getString(_options: GetOptions): Promise<GetResult<string>> {
     throw new Error('Not available on web.');
   }
