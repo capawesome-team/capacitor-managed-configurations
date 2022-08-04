@@ -1,4 +1,4 @@
-package dev.robingenz.capacitorjs.plugins.managedconfigurations;
+package io.capawesome.capacitorjs.plugins.managedconfigurations;
 
 import android.content.RestrictionsManager;
 import android.os.Bundle;

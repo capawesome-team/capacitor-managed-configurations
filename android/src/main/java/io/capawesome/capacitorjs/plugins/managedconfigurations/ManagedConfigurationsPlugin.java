@@ -1,4 +1,4 @@
-package dev.robingenz.capacitorjs.plugins.managedconfigurations;
+package io.capawesome.capacitorjs.plugins.managedconfigurations;
 
 import android.content.res.Configuration;
 import com.getcapacitor.JSObject;
